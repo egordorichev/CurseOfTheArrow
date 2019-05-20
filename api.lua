@@ -1,18 +1,27 @@
 
 g_calpha = 255
 
+--The game's font
 local font
+
+--The game's canvas
 local canvas
 
 --canvas_x, canvas_y -> The convas drawing position on the love's screen
 --cavnas_scale -> The scale of the canvas
 local canvas_x, canvas_y, canvas_scale = 0, 0, 5
 
+--The spritesheet of the game, as an image object.
 local sprites
-local quads = {}
 
+--The quads for each sprite.
+local sprites_quads = {}
+
+--A backup of the old classic console print,
+--It will be replaced later by a graphical print
 local oldprint = print
 
+--The classic console print renamed
 function printh(...)
   oldprint(...)
 end
@@ -47,7 +56,7 @@ function initApi()
   sprites = love.graphics.newImage("assets/sprites.png")
 
   for i = 0, 256 * 256 - 1 do
-    quads[i] = love.graphics.newQuad(flr(i % 32 * 8), flr(flr(i / 32) * 8), 8, 8, 256, 256)
+    sprites_quads[i] = love.graphics.newQuad(flr(i % 32 * 8), flr(flr(i / 32) * 8), 8, 8, 256, 256)
   end
 
   color()
@@ -262,7 +271,7 @@ local quadsCache = {}
 
 g_sprc = nil
 function spr(s, x, y, w, h, fx, fy, r)
-  if not quads[s] then return end
+  if not sprites_quads[s] then return end
 
   x = flr(x)
   y = flr(y)
@@ -293,7 +302,7 @@ function spr(s, x, y, w, h, fx, fy, r)
 end
 
 function bspr(s, x, y, w, h, fx, fy, r)
-  if not quads[s] then return end
+  if not sprites_quads[s] then return end
 
   x = flr(x)
   y = flr(y)
