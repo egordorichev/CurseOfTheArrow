@@ -5,7 +5,7 @@ level = entity:extend({
 function level:init()
   g_level = self
 
-  local data = require "assets.map"
+  local data = require("assets.map")
   local layer = data.layers[1]
   local tiles = layer.data
 

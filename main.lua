@@ -2,11 +2,11 @@
 love.graphics.setDefaultFilter("nearest","nearest")
 love.graphics.setDefaultFilter = function() end
 
-require "touchcontrols"
-require "api"
-require "src.main"
+require("touchcontrols")
+require("api")
+require("src.main")
 
-flux = require "flux"
+flux = require("flux")
 
 tc = {
   a = 0
