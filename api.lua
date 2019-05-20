@@ -17,14 +17,9 @@ local sprites
 --The quads for each sprite.
 local sprites_quads = {}
 
---A backup of the old classic console print,
+--Rename classic console print,
 --It will be replaced later by a graphical print
-local oldprint = print
-
---The classic console print renamed
-function printh(...)
-  oldprint(...)
-end
+printh = print
 
 local camera = {
   x = 0,
