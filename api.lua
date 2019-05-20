@@ -21,11 +21,6 @@ local sprites_quads = {}
 --It will be replaced later by a graphical print
 printh = print
 
-local camera = {
-  x = 0,
-  y = 0
-}
-
 local bit = require "bit"
 
 band = bit.band
