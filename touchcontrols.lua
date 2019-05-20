@@ -4,10 +4,10 @@ _touches = {}
 
 --Constants
 local sw, sh = love.graphics.getDimensions()
-local circleSize = love.window.toPixels(78)
+local circleSize = 78 --love.window.toPixels(78)
 
-local joyColor = {0,0,0,80}
-local joybodyColor = {255,255,255}
+local joyColor = {0,0,0,80/255}
+local joybodyColor = {1,1,1}
 
 --Positions
 local joycx, joycy = circleSize*1.5, sh - circleSize*1.5
@@ -17,10 +17,10 @@ local joyR = circleSize/2 --Joystick circle radius
 
 function drawTouchJoy()
 
-  love.graphics.setColor(joybodyColor[1], joybodyColor[2], joybodyColor[3], tc.a)
+  love.graphics.setColor(joybodyColor[1], joybodyColor[2], joybodyColor[3], tc.a/255)
   love.graphics.circle("fill", joycx, joycy, joybodyR)
 
-  love.graphics.setColor(joyColor[1], joyColor[2], joyColor[3], tc.a)
+  love.graphics.setColor(joyColor[1], joyColor[2], joyColor[3], tc.a/255)
   love.graphics.circle("fill", joyx, joyy, joyR)
 
 end

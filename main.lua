@@ -1,3 +1,7 @@
+
+love.graphics.setDefaultFilter("nearest","nearest")
+love.graphics.setDefaultFilter = function() end
+
 require "touchcontrols"
 require "api"
 require "src.main"
@@ -72,20 +76,20 @@ function love.draw()
   if (g_ek and state ~= splash) or tc.a ~=0 then
     love.graphics.setScissor()
     local w, h = love.graphics.getDimensions()
-    local s = love.window.toPixels(38)--w / 25
+    local s = 38--love.window.toPixels(38)--w / 25
 
     local sp = (state == splash or state == warn)
     local c = 255
     local a = 50
     local ad = 80
 
-    mbutton(w - s * 2.5, h - s * 1.5, s, "z", sp and "X" or "Z", c,tc.a,ad)
+    mbutton(w - s * 2.5, h - s * 1.5, s, "z", sp and "X" or "Z", c,tc.a/255,ad)
 
     if not sp then
-      mbutton(w - s * 1.5, h - s * 4, s, "x", "X", c,tc.a,ad)
+      mbutton(w - s * 1.5, h - s * 4, s, "x", "X", c,tc.a/255,ad)
       drawTouchJoy()
-      mbutton((w - s), s, s / 2, "escape", "=", c,tc.a,100)
-      mbutton((w - s), s*2.5, s / 2, "r", "R", c,tc.a,100)
+      mbutton((w - s), s, s / 2, "escape", "=", c,tc.a/255,100)
+      mbutton((w - s), s*2.5, s / 2, "r", "R", c,tc.a/255,100)
     end
 
     love.graphics.setLineWidth(1)
@@ -141,7 +145,7 @@ function mbutton(x, y, s, b, chr, c, al, ad)
   love.graphics.circle("fill", x, y, s)
 
   love.graphics.setColor(0,0,0,a)
-  love.graphics.print(chr,x-1.5*(s/4),y-1.5*(s/4),0,s/4,s/4)
+  love.graphics.print(chr,x-1.5*(s/4),y-1.3*(s/2),0,s/16,s/16)
 end
 
 function love.resize()
