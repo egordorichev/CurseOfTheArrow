@@ -21,14 +21,10 @@ local sprites_quads = {}
 --It will be replaced later by a graphical print
 printh = print
 
-local bit = require "bit"
+--Provide global functions of the bitop library
+local bit = require("bit")
+band, bor, bxor, bnot, shl, shr = bit.band, bit.bor, bit.bxor, bit.lshift, bit.rshift
 
-band = bit.band
-bor = bit.bor
-bxor = bit.bxor
-bnot = bit.bnot
-shl = bit.lshift
-shr = bit.rshift
 
 function initApi()
   love.graphics.setLineStyle("rough")
