@@ -82,8 +82,6 @@ function apiResize()
   canvas_y = (h - s * 128) / 2
 end
 
-local clr = 7
-
 --The colors palette, uses PICO-8 palette.
 palette = {
   [0] = { 0, 0, 0 },
@@ -107,11 +105,14 @@ palette = {
 --Convert the colors from the [0,255] range into the [0,1] range.
 for i=0, 15 do for j=1,3 do palette[i][j] = palette[i][j]/255 end end
 
+--The selected drawing color
+local selected_color = 7
+
 function color(c)
   if c then
-    clr = c % 16
+    selected_color = c % 16
 
-    local p = palette[clr]
+    local p = palette[selected_color]
     if g_calpha and c~=0 then
       love.graphics.setColor(g_calpha, g_calpha, g_calpha)
     else
@@ -124,7 +125,7 @@ end
 
 function cls(c)
   color(c)
-  love.graphics.clear(palette[clr])
+  love.graphics.clear(palette[selected_color])
 end
 
 function print(str, x, y, c)
@@ -280,7 +281,7 @@ function spr(s, x, y, w, h, fx, fy, r)
   end
   love.graphics.draw(sprites, quadsCache[s][quadName], flr(x + 4 * w), flr(y + 4 * h), math.rad((r or 0) * 360), sx, sy, flr(4 * w), flr(4 * h))
 
-  color(clr)
+  color(selected_color)
 end
 
 function bspr(s, x, y, w, h, fx, fy, r)
@@ -301,7 +302,7 @@ function bspr(s, x, y, w, h, fx, fy, r)
   color(0)
   love.graphics.draw(sprites, quadsCache[s][quadName], x + 4 * w, y + 4 * h, math.rad((r or 0) * 360), sx, sy, 4 * w, 4 * h)
 
-  color(clr)
+  color(selected_color)
 end
 
 local map = {
