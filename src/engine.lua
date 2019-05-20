@@ -1,4 +1,7 @@
 
+local bit = require("bit")
+local shr = bit.rshift
+
 ----- engine
 
 -- oop
