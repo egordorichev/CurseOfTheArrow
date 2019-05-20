@@ -3,9 +3,11 @@ g_calpha = 255
 
 local font
 local canvas
-canvas_x = 0
-canvas_y = 0
-canvas_scale = 5
+
+--canvas_x, canvas_y -> The convas drawing position on the love's screen
+--cavnas_scale -> The scale of the canvas
+local canvas_x, canvas_y, canvas_scale = 0, 0, 5
+
 local sprites
 local quads = {}
 
