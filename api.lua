@@ -119,7 +119,7 @@ function color(c)
       love.graphics.setColor(p)
     end
   else
-    love.graphics.setColor(255, 255, 255, 255)
+    love.graphics.setColor(1,1,1,1)
   end
 end
 
