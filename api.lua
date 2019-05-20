@@ -133,9 +133,9 @@ function print(str, x, y, c)
 
   x = flr(x)
   y = flr(y) - 1
-  if print_a then
+  if print_alpha then
     local r, g, b = love.graphics.getColor()
-    love.graphics.setColor(r, g, b, print_a)
+    love.graphics.setColor(r, g, b, print_alpha)
   end
   love.graphics.print(str, x, y)
 end

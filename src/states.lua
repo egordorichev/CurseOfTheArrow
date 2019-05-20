@@ -267,7 +267,7 @@ function ingame.draw()
   if not ingamestate and g_drawchap and state==ingame and g_index < 100 then
     local s = chap[flr(g_index /   20) + 1]
     ct = ct + (ctstate == "fade" and -1 or 1)
-    print_a = ct * 4
+    print_alpha = ct * 4
     if ctstate == "fade" and ct < 0 then
       g_drawchap = false
       ct = 0
@@ -277,7 +277,7 @@ function ingame.draw()
     end
     coprint(s, 60, 7)
 
-    print_a = nil
+    print_alpha = nil
   end
 
   if g_index == 104 then
@@ -815,7 +815,7 @@ end
 
 function warn.draw()
 
-  print_a = (ffade and flr(255 - g_time * 3) or min(255, flr(g_time * 3))) / 255
+  print_alpha = (ffade and flr(255 - g_time * 3) or min(255, flr(g_time * 3))) / 255
   coprint("Warning", 32, 14)
   coprint("This is a beta build of the game.", 32 + 16)
   coprint("It may contain bugs or other issues.", 32 + 16 + 8)
@@ -825,7 +825,7 @@ function warn.draw()
 
   if g_time % 120< 60 then coprint("Press ".. kmap["x"] .. " to start", 32 + 16 + 16 + 24 + 8, 12) end
 
-  print_a = nil
+  print_alpha = nil
   if ffade and flr(255 - g_time * 3)  <= 0 and not sswapped then
     state = menu--cut
     printh("menu")
@@ -856,7 +856,7 @@ function win.draw()
 
   alp = min(255, alp + 8)
 
-  print_a = alp
+  print_alpha = alp
   coprint("Congratulations!", 32, 7)
   coprint("You did it!", 32 + 16, 7)
   coprint("We hope that you enjoyed the " .. (g_demo and "demo!" or "game!"), 32 + 16 + 8, 7)
@@ -868,7 +868,7 @@ function win.draw()
 
   coprint((current == 0 and "> " or "  ") .. "Visit the game site  ", 32 + 16 + 16 + 32 + 8, current == 0 and 12 or 13)
   coprint((current == 1 and "> " or "  ") .. "Exit to the menu  ", 32 + 16 + 16 + 32 + 8 + 8, current == 1 and 12 or 13)
-  print_a = nil
+  print_alpha = nil
 end
 
 
