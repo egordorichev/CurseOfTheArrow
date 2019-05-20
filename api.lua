@@ -3,9 +3,9 @@ g_calpha = 255
 
 local font
 local canvas
-cx = 0
-cy = 0
-cs = 5
+canvas_x = 0
+canvas_y = 0
+canvas_scale = 5
 local sprites
 local quads = {}
 
@@ -75,7 +75,7 @@ function apiPostDraw()
     dx, dy = love.math.random(-sm, sm), love.math.random(-sm, sm)
   end
 
-  love.graphics.draw(canvas, cx + dx, cy + dy, 0, cs, cs)
+  love.graphics.draw(canvas, canvas_x + dx, canvas_y + dy, 0, canvas_scale, canvas_scale)
 end
 
 function apiResize()
@@ -90,8 +90,8 @@ function apiResize()
   end
 
   cs = s
-  cx = (w - s * 192) / 2
-  cy = (h - s * 128) / 2
+  canvas_x = (w - s * 192) / 2
+  canvas_y = (h - s * 128) / 2
 end
 
 local clr = 7
