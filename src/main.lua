@@ -1,14 +1,14 @@
-require "src.engine"
-require "src.guy"
-require "src.level"
-require "src.other"
-require "src.states"
-require "src.cutscene"
--- require "src.autobatch"
+require("src.engine")
+require("src.guy")
+require("src.level")
+require("src.other")
+require("src.states")
+require("src.cutscene")
+-- require("src.autobatch")
 
 g_allm = 100
 
-local ach = require "src.achievements"
+local ach = require("src.achievements")
 
 
 mobile = false
@@ -551,7 +551,7 @@ function btnp(b)
     return (btns[b] ~= nil)
 end
 
-lume = require "src.lume"
+lume = require("src.lume")
 
 function save(exit)
   if g_failc and exit then g_cubes = get_amount() end
