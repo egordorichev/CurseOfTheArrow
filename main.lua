@@ -22,7 +22,7 @@ function love.load()
     joysaveid = love.filesystem.read("/JoystickID.txt")
   end
 
-  initApi()
+  initializeAPI()
 
   if _init then
     _init()

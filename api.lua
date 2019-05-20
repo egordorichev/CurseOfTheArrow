@@ -22,7 +22,7 @@ local sprites_quads = {}
 printh = print
 
 --Initialized the API, load fonts, images, etc...
-function initApi()
+function initializeAPI()
   love.graphics.setLineStyle("rough")
   -- love.mouse.setVisible(false)
   love.keyboard.setKeyRepeat(false)
