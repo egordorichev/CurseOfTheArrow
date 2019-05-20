@@ -1,7 +1,4 @@
 
-local bit = require("bit")
-local shr = bit.rshift
-
 ----- engine
 
 -- oop
@@ -388,7 +385,7 @@ end
 
 function c_bkt_coords(e)
   local p = e.pos
-  return flr(shr(p.x, 4)), flr(shr(p.y, 4))
+  return flr(p.x/16), flr(p.y/16)
 end
 
 function c_bucket(t, x, y)
