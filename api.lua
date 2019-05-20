@@ -49,11 +49,8 @@ function shake(d, m)
 end
 
 function apiPreDraw()
-  --love.graphics.setScissor()
-  love.graphics.clear(10 / 255, 10 / 255, 10 / 255, 1)
+  love.graphics.clear(10/255, 10/255, 10/255, 1)
   love.graphics.setCanvas{canvas, stencil=true}
-  --love.graphics.push()
-
 end
 
 function apiPostDraw()
@@ -86,24 +83,29 @@ function apiResize()
 end
 
 local clr = 7
+
+--The colors palette, uses PICO-8 palette.
 palette = {
   [0] = { 0, 0, 0 },
-  { 32 / 255, 51 / 255, 123 / 255 },
-  { 126 / 255, 37 / 255, 83 / 255 },
-  { 0 / 255, 131 / 255, 49 / 255 },
-  { 171 / 255, 82 / 255, 54 / 255 },
-  { 69 / 255, 69 / 255, 69 / 255 },
-  { 194 / 255, 195 / 255, 199 / 255 },
-  { 255 / 255, 241 / 255, 232 / 255 },
-  { 255 / 255, 0 / 255, 77 / 255 },
-  { 255 / 255, 163 / 255, 0 / 255 },
-  { 255 / 255, 231 / 255, 39 / 255 },
-  { 0 / 255, 226 / 255, 50 / 255 },
-  { 41 / 255, 173 / 255, 255 / 255 },
-  { 131 / 255, 118 / 255, 156 / 255 },
-  { 255 / 255, 119 / 255, 168 / 255 },
-  { 255 / 255, 204 / 255, 170 / 255 }
+  { 32, 51, 123 },
+  { 126, 37, 83 },
+  { 0, 131, 49 },
+  { 171, 82, 54 },
+  { 69, 69, 69 },
+  { 194, 195, 199 },
+  { 255, 241, 232 },
+  { 255, 0, 77 },
+  { 255, 163, 0 },
+  { 255, 231, 39 },
+  { 0, 226, 50 },
+  { 41, 173, 255 },
+  { 131, 118, 156 },
+  { 255, 119, 168 },
+  { 255, 204, 170 }
 }
+
+--Convert the colors from the [0,255] range into the [0,1] range.
+for i=0, 15 do for j=1,3 do palette[i][j] = palette[i][j]/255 end end
 
 function color(c)
   if c then
@@ -268,7 +270,7 @@ function spr(s, x, y, w, h, fx, fy, r)
   if g_sprc then color(g_sprc) g_sprc = nil
   else
     if g_index >= 80 and g_index < 100 then
-      love.graphics.setColor(255 / 255, 200 / 255, 200 / 255, 1)
+      love.graphics.setColor(1, 200/255, 200/255, 1)
 
     else
       local c = (g_calpha or 255) / 255
