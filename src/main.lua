@@ -16,8 +16,6 @@ if love.system.getOS() == 'iOS' or love.system.getOS() == 'Android' then
   mobile = true
 end
 
-love.graphics.setDefaultFilter("nearest", "nearest")
-
 chap = {
   "Chapter I: The Curse",
   "Chapter II: Lost Civilization",

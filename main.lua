@@ -1,6 +1,5 @@
 
 love.graphics.setDefaultFilter("nearest","nearest")
-love.graphics.setDefaultFilter = function() end
 
 require("touchcontrols")
 require("api")

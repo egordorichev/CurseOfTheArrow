@@ -114,7 +114,6 @@ dockx = -5
 local dv = 0
 
 local lightimg = love.graphics.newImage("assets/light.png")
-lightimg:setFilter("nearest","nearest")
 local mask_shader = love.graphics.newShader[[
    vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords) {
       if (Texel(texture, texture_coords).rgb == vec3(0.0)) {
@@ -778,7 +777,6 @@ end
 
 local logo = love.graphics.newImage("assets/logo.png")
 
-logo:setFilter("nearest", "nearest")
 function splash.draw()
   love.graphics.clear(10 / 255, 10 / 255, 10 / 255,1)
   love.graphics.setColor(1, 1, 1, (g_time*3 > 255 and flr(255+255 - g_time * 3) or  flr(g_time * 3)) / 255)

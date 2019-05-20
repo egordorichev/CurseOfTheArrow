@@ -21,19 +21,17 @@ local sprites_quads = {}
 --It will be replaced later by a graphical print
 printh = print
 
-
+--Initialized the API, load fonts, images, etc...
 function initApi()
   love.graphics.setLineStyle("rough")
   -- love.mouse.setVisible(false)
   love.keyboard.setKeyRepeat(false)
 
   font = love.graphics.newFont("assets/font.ttf", 4)
-  font:setFilter("nearest", "nearest")
 
   love.graphics.setFont(font)
 
   canvas = love.graphics.newCanvas(192, 128)
-  canvas:setFilter("nearest", "nearest")
 
   sprites = love.graphics.newImage("assets/sprites.png")
 
