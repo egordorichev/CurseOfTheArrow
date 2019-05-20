@@ -436,7 +436,7 @@ end
 function menu.draw()
   if state ~= ingame then
 
-    cls(0)
+    clear_screen(0)
     g_calpha = 100
     ingame.draw()
 
@@ -551,7 +551,7 @@ function settings.update()
 end
 
 function settings.draw()
-  cls(0)
+  clear_screen(0)
   g_calpha = 100
   ingame.draw()
   g_calpha = nil
@@ -684,7 +684,7 @@ function level_select.update()
 end
 
 function level_select.draw()
-  cls(0)
+  clear_screen(0)
   g_calpha = 100
   ingame.draw()
   g_calpha = nil
@@ -849,7 +849,7 @@ function win.start()
 end
 
 function win.draw()
-  cls(0)
+  clear_screen(0)
   g_calpha = 100
   ingame.draw()
   g_calpha = nil

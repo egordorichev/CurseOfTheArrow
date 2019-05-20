@@ -123,9 +123,9 @@ function color(c)
   end
 end
 
-function cls(c)
   color(c)
-  love.graphics.clear(palette[selected_color])
+--Clears the screen with a specific color
+function clear_screen(c)
 end
 
 function print(str, x, y, c)
