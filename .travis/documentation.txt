@@ -1,7 +1,8 @@
 Environment Variables:
 ----------------------
 BINVER -> The templates release version (11.2_A)
-GITHUB_TOKEN -> The token used to upload the releases (secret)
+GITHUB_TOKEN -> The token used to upload the releases into github (secret)
+BUTLER_API_KEY -> The token used to upload th releases into itch.io (secret)
 
 Directories Tree:
 -----------------
