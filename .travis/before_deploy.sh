@@ -50,12 +50,12 @@ chmod a+x ./linux-i686/run.sh
 echo ----==== Building MacOS ====----
 
 7z X -r -y -tzip -bd CurseOfTheArrow-macos.zip  -o./macos
-cp -v -f CurseOfTheArrow.love macos/CurseOfTheArrow.app/Contents/Resources/CurseOfTheArrow.love
+cp -v -f ./CurseOfTheArrow.love ./macos/CurseOfTheArrow.app/Contents/Resources/CurseOfTheArrow.love
 7z A -r -y -tzip -bd Builds/CurseOfTheArrow-macos.zip macos/*
 
 echo ----==== Copying Universal... ====----
   
-cp -v -f CurseOfTheArrow.love Builds/CurseOfTheArrow-Universal.love
+cp -v -f ./CurseOfTheArrow.love ./Builds/CurseOfTheArrow-Universal.love
 
 echo ----==== Downloading Deployment Tools ====----
 
