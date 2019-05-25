@@ -27,8 +27,8 @@ After before_deploy.sh:
 ../BuildUtils/linux-i686/ -> The linux-i686 template extracted
 ../BuildUtils/macos/ -> The macos template extracted
 
-../BuildUtils/Builds/CurseOfTheArrow_win32.zip -> The win32 build
-../BuildUtils/Builds/CurseOfTheArrow_win64.zip -> The win64 build
+../BuildUtils/Builds/CurseOfTheArrow-win32.zip -> The win32 build
+../BuildUtils/Builds/CurseOfTheArrow-win64.zip -> The win64 build
 ../BuildUtils/Builds/CurseOfTheArrow-linux-x86_64.zip -> The linux-x86_64 build
-../BuildUtils/Builds/CurseOfTheArrow_linux-i686.zip -> The linux-i686 build
+../BuildUtils/Builds/CurseOfTheArrow-linux-i686.zip -> The linux-i686 build
 ../BuildUtils/Builds/CurseOfTheArrow-macos.zip -> The macos build
