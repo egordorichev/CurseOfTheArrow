@@ -31,8 +31,10 @@ function love.load()
   apiResize()
 end
 
-function love.update(dt)
+local titleBase = love.window.getTitle().." FPS: "
 
+function love.update(dt)
+  love.window.setTitle(titleBase..love.timer.getFPS())
   for k, b in pairs(_keys) do
     if b == true then
       btns[k] = true
@@ -193,57 +195,52 @@ function love.joystickadded(joy)
     end
   end
 end
+
+--A custom love.run to no let love.update to be called more than 60 times per second, because egor didn't use the dt argument in his code, pretending that update is called 60 times per second
 local cycleTime, cycleTimer = 1/60, 1/60
 function love.run()
+  if love.load then love.load(love.arg.parseGameArguments(arg), arg) end
 
-    if love.math then
-        love.math.setRandomSeed(os.time())
-    end
+  -- We don't want the first frame's dt to include time taken by love.load.
+  if love.timer then love.timer.step() end
 
-    if love.load then love.load(arg) end
+  local dt = 0
 
-    -- We don't want the first frame's dt to include time taken by love.load.
-    if love.timer then love.timer.step() end
-
-    local dt = 0
-
-    -- Main loop time.
-    while true do
-        -- Process events.
-        if love.event then
-            love.event.pump()
-            for name, a,b,c,d,e,f in love.event.poll() do
-                if name == "quit" then
-                    if not love.quit or not love.quit() then
-                        return a
-                    end
-                end
-                love.handlers[name](a,b,c,d,e,f)
-            end
+  -- Main loop time.
+  return function()
+    -- Process events.
+    if love.event then
+      love.event.pump()
+      for name, a,b,c,d,e,f in love.event.poll() do
+        if name == "quit" then
+          if not love.quit or not love.quit() then
+            return a or 0
+          end
         end
-
-        -- Update dt, as we'll be passing it to update
-        if love.timer then
-            love.timer.step()
-            dt = love.timer.getDelta()
-        end
-
-    cycleTimer = cycleTimer - dt
-    if cycleTimer <= 0 or not love.timer then
-      cycleTimer = cycleTimer % cycleTime
-
-      -- Call update and draw
-      if love.update then love.update(dt) end -- will pass 0 if love.timer is disabled
-
-      if love.graphics and love.graphics.isActive() then
-        love.graphics.clear(love.graphics.getBackgroundColor())
-        love.graphics.origin()
-        if love.draw then love.draw() end
-        love.graphics.present()
+        love.handlers[name](a,b,c,d,e,f)
       end
     end
 
-        if love.timer then love.timer.sleep(0.001) end
+    -- Update dt, as we'll be passing it to update
+    if love.timer then dt = love.timer.step() end
+    
+    cycleTimer = cycleTimer - dt
+    
+    if cycleTimer <= 0 or not love.timer then
+      cycleTimer = math.max(cycleTime+cycleTimer,0)
+      -- Call update and draw
+      if love.update then love.update(cycleTime) end -- will pass 0 if love.timer is disabled
     end
 
+    if love.graphics and love.graphics.isActive() then
+      love.graphics.origin()
+      love.graphics.clear(love.graphics.getBackgroundColor())
+
+      if love.draw then love.draw() end
+
+      love.graphics.present()
+    end
+
+    if love.timer then love.timer.sleep(0.001) end
+  end
 end

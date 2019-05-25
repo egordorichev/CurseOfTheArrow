@@ -190,13 +190,9 @@ function srand(s)
   math.randomseed(s or 0)
 end
 
-function min(a, b)
-  return a < b and a or b
-end
+min = math.min
 
-function max(a, b)
-  return a > b and a or b
-end
+max = math.max
 
 function mid(x, y, z)
   x, y, z = x or 0, y or 0, z or 0
