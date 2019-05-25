@@ -1,0 +1,34 @@
+Environment Variables:
+----------------------
+BINVER -> The templates release version (11.2_A)
+
+Directories Tree:
+-----------------
+
+After install.sh:
+-----------------
+. -> The cloned CurseOfTheArrow repository
+../BuildUtils/ -> A directory containing the building utilities
+../BuildUtils/CurseOfTheArrow-win32.zip -> A build template
+../BuildUtils/CurseOfTheArrow-win64.zip -> A build template
+../BuildUtils/CurseOfTheArrow-linux-i686.zip -> A build template
+../BuildUtils/CurseOfTheArrow-linux-x86_64.zip../Build/CurseOfTheArrow-linux-macos.zip -> A build template
+../BuildUtils/CurseOfTheArrow-macos.zip../Build/CurseOfTheArrow-linux-macos.zip -> A build template
+../BuildUtils/apktool.jar -> APKTOOl, could be used for Android building
+
+After before_deploy.sh:
+-----------------------
+../BuildUtils/Builds/ -> A directory containing the file to upload
+../BuildUtils/CurseOfTheArrow/ -> The game files without the extra github/travis files
+../BuildUtils/CurseOfTheArrow.love -> The game build .love file
+../BuildUtils/win32/ -> The win32 template extracted
+../BuildUtils/win32/ -> The win64 template extracted
+../BuildUtils/linux-x86_64/ -> The linux-x86_64 template extracted
+../BuildUtils/linux-i686/ -> The linux-i686 template extracted
+../BuildUtils/macos/ -> The macos template extracted
+
+../BuildUtils/Builds/CurseOfTheArrow_win32.zip -> The win32 build
+../BuildUtils/Builds/CurseOfTheArrow_win64.zip -> The win64 build
+../BuildUtils/Builds/CurseOfTheArrow-linux-x86_64.zip -> The linux-x86_64 build
+../BuildUtils/Builds/CurseOfTheArrow_linux-i686.zip -> The linux-i686 build
+../BuildUtils/Builds/CurseOfTheArrow-macos.zip -> The macos build
