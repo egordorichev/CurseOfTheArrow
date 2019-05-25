@@ -11,7 +11,7 @@ function love.conf(t)
 
   t.audio.mixwithsystem = true        -- Keep background music playing when opening LOVE (boolean, iOS and Android only)
 
-  t.window.title = "Curse of the Arrow v1.6 - by @egordorichev"  -- The window title (string)
+  t.window.title = "Curse of the Arrow v1.7 - by @egordorichev"  -- The window title (string)
   t.window.icon = "assets/icon/icon_16x16.png"  -- Filepath to an image to use as the window's icon (string)
   t.window.width = 192*5              -- The window width (number)
   t.window.height = 128*5             -- The window height (number)
