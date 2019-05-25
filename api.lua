@@ -27,7 +27,13 @@ function initializeAPI()
   -- love.mouse.setVisible(false)
   love.keyboard.setKeyRepeat(false)
 
-  font = love.graphics.newFont("assets/font.ttf", 4)
+  --font = love.graphics.newFont("assets/font.ttf", 4)
+  
+  local fontChars = {}
+  for i=1,127 do fontChars[i] = string.char(i) end
+  fontChars = table.concat(fontChars)
+  
+  font = love.graphics.newImageFont("assets/font4x6.png",fontChars,1)
 
   love.graphics.setFont(font)
 
