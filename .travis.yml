@@ -5,6 +5,8 @@ go:
 
 sudo: required
 
+install: ./.travis/install.sh
+
 script: ./.travis/script.sh
 
 before_deploy: ./.travis/before_deploy.sh
