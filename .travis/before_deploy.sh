@@ -55,7 +55,7 @@ cp -v -f ./CurseOfTheArrow.love ./macos/CurseOfTheArrow.app/Contents/Resources/C
 
 echo ----==== Copying Universal... ====----
   
-cp -v -f ./CurseOfTheArrow.love ./Builds/CurseOfTheArrow-Universal.love
+cp -v -f ./CurseOfTheArrow.love ./Builds/CurseOfTheArrow-universal.love
 
 echo ----==== Downloading Deployment Tools ====----
 
