@@ -20,7 +20,7 @@ wget -O "../BuildUtils/CurseOfTheArrow-win32.zip" "https://github.com/Rexcellent
 wget -O "../BuildUtils/CurseOfTheArrow-win64.zip" "https://github.com/RexcellentGames/CurseOfTheArrow-Binaries/releases/download/"$BINVER"/CurseOfTheArrow-win64.zip"
 wget -O "../BuildUtils/CurseOfTheArrow-linux-i686.zip" "https://github.com/RexcellentGames/CurseOfTheArrow-Binaries/releases/download/"$BINVER"/CurseOfTheArrow-linux-i686.zip"
 wget -O "../BuildUtils/CurseOfTheArrow-linux-x86_64.zip" "https://github.com/RexcellentGames/CurseOfTheArrow-Binaries/releases/download/"$BINVER"/CurseOfTheArrow-linux-x86_64.zip"
-wget -O "../BuildUtils/CurseOfTheArrow-linux-macos.zip" "https://github.com/RexcellentGames/CurseOfTheArrow-Binaries/releases/download/"$BINVER"/CurseOfTheArrow-linux-macos.zip"
+wget -O "../BuildUtils/CurseOfTheArrow-macos.zip" "https://github.com/RexcellentGames/CurseOfTheArrow-Binaries/releases/download/"$BINVER"/CurseOfTheArrow-linux-macos.zip"
 
 echo ----==== Downloading ApkTool ====---
 
