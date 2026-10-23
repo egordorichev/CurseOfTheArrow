@@ -49,6 +49,8 @@ function ingame.update()
         if current == 0 then
           pause = false
             t_calpa = 100
+        elseif g_index == 102 then
+          love.event.quit()
         else
           g_index = 102
           pause = false
@@ -301,7 +303,7 @@ function ingame.draw()
       coprint((current == 3 and ">  " or "  ") .. "Go back  ", 64 + 16+ 16+8, current == 3 and 7 or 13)
       else
         coprint((current == 0 and ">  " or "  ") .. "Return to the game  ", 64 + 8, current == 0 and 7 or 13)
-        coprint((current == 1 and ">  " or "  ") .. "Exit to menu ", 64 + 16, current == 1 and 7 or 13)
+        coprint((current == 1 and ">  " or "  ") .. (g_index == 102 and "Quit game " or "Exit to menu "), 64 + 16, current == 1 and 7 or 13)
 
       end
     end

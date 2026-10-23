@@ -83,7 +83,7 @@ function apiResize()
     s = flr(s)
   end
 
-  cs = s
+  canvas_scale = s
   canvas_x = (w - s * 192) / 2
   canvas_y = (h - s * 128) / 2
 end
